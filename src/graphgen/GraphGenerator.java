@@ -72,10 +72,12 @@ public class GraphGenerator {
 		    this.mapping.getCluster(j)) {
 		    if (prob <= SAME_CLUSTER_PROB) {
 			this.nodes.get(i).neighbors.add(this.nodes.get(j));
+			this.nodes.get(j).neighbors.add(this.nodes.get(i));
 			numberOfEdges ++;
 		    }
 		} else if (prob <= DIFF_CLUSTER_PROB) {
 		    this.nodes.get(i).neighbors.add(this.nodes.get(j));
+		    this.nodes.get(j).neighbors.add(this.nodes.get(i));
 		    numberOfEdges ++;
 		}
 		
